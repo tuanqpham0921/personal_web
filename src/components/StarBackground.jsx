@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-// id, size, x, y, opacity, animationDuration
-// id, size, x, y, delay, animationDuration
+// Stars   - id, size, x, y, opacity, animationDuration
+// Meteors - id, size, x, y, delay,   animationDuration
 
 export const StarBackground = () => {
     const [stars, setStars] = useState([]);
@@ -9,7 +9,17 @@ export const StarBackground = () => {
     useEffect(() => {
         generateStars();
         generateMeteors();
-    }, [])
+
+        const handleResize = () => {
+            generateStars();
+            generateMeteors();
+        }
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const generateStars = () => {
         const numberOfStars = Math.floor(
@@ -21,11 +31,11 @@ export const StarBackground = () => {
         for (let i = 0; i < numberOfStars; i++) {
             newStars.push({
                 id: i,
-                size: Math.random() * 3 + 1, // Random size between 1 and 4
-                x: Math.random() * 100, // Random x position in percentage
-                y: Math.random() * 100, // Random y position in percentage
-                opacity: Math.random() * 0.5 + 0.5, // Random opacity between 0 and 1
-                animationDuration: Math.random() * 4 + 2 // Random duration 
+                size: Math.random() * 3 + 1, 
+                x: Math.random() * 100, 
+                y: Math.random() * 100, 
+                opacity: Math.random() * 0.5 + 0.5, 
+                animationDuration: Math.random() * 4 + 2 
             });
         }
 
@@ -39,11 +49,11 @@ export const StarBackground = () => {
         for (let i = 0; i < numberOfMeteors ; i++) {
             newMeteors.push({
                 id: i,
-                size: Math.random() * 2 + 1, // Random size between 1 and 4
-                x: Math.random() * 100, // Random x position in percentage
-                y: Math.random() * 100,  // Random y position in percentage
-                delay: Math.random() * 15, // Random opacity between 0 and 1 times 15
-                animationDuration: Math.random() * 3 + 3 // Random duration 
+                size: Math.random() * 2 + 1, 
+                x: Math.random() * 100, 
+                y: Math.random() * 100,  
+                delay: Math.random() * 15, 
+                animationDuration: Math.random() * 3 + 3 
             });
         }
 
@@ -71,7 +81,7 @@ export const StarBackground = () => {
                     key={meteor.id} className="meteor animate-meteor" 
                     style={{
                         width: meteor.size * 50 + 'px',
-                        height: meteor.size * 2 + 'px',
+                        height: meteor.size  + 'px',
                         left: meteor.x + '%',
                         top: meteor.y + '%',
                         animationDelay: meteor.delay,
