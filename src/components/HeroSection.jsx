@@ -1,5 +1,8 @@
 import { ArrowDown } from "lucide-react";
 
+// Cur 
+// add the contact info at the bottom of the picture
+
 export const HeroSection = () => {
     return (
         <section 
@@ -12,7 +15,8 @@ export const HeroSection = () => {
                     <img
                         src="/profile_picture.png"
                         alt="Profile"
-                        className="w-full md:w-80 h-auto md:h-80 rounded-full object-cover shadow-lg mb-4"
+                        
+                        className="w-40 md:w-80 h-auto md:h-80 rounded-full object-cover shadow-lg mb-4"
                     />
                 </div>
                 {/* Text section */}
@@ -25,7 +29,7 @@ export const HeroSection = () => {
                             {" "}Pham 
                         </span>
                     </h1>
-                    <p className="text-sm md:text-base text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3 text-left md:text-center">
+                    <p className="text-sm md:text-base text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3 text-left">
                         Hello! I'm an ex-Software Engineer at United Launch Alliance (ULA). I created this website to help you get to know me better.<br /><br />
                         I'm passionate about automation, software development, cloud computing and machine learning.<br /><br />
                         I'm always learning and expanding my knowledge across different domains.<br /><br />
