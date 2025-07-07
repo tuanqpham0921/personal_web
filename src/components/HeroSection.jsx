@@ -1,8 +1,5 @@
 import { ArrowDown } from "lucide-react";
 
-// Cur 
-// add the contact info at the bottom of the picture
-
 export const HeroSection = () => {
     return (
         <section 
@@ -15,9 +12,51 @@ export const HeroSection = () => {
                     <img
                         src="/profile_picture.png"
                         alt="Profile"
-                        
-                        className="w-40 md:w-80 h-auto md:h-80 rounded-full object-cover shadow-lg mb-4"
+                        className="w-28 md:w-80 h-auto md:h-80 rounded-full object-cover shadow-lg mb-4"
                     />
+                    {/* Contact Info */}
+                    <div className="flex flex-col items-center space-y-2 mb-4 animate-fade-in-delay-2">
+                        <a
+                            href="mailto:tuanqpham0921@gmail.com"
+                            className="text-sm text-muted-foreground hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            tuanqpham0921@gmail.com
+                        </a>
+                        <a
+                            className="text-sm text-muted-foreground hover:underline text-right self-end"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            San Macros, TX
+                        </a>
+                        <div className="flex flex-row items-center space-x-4">
+                            <a
+                                href="https://www.linkedin.com/in/tuanqpham0921/"
+                                className="text-sm text-muted-foreground hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                            </a>
+                            <a
+                                href="https://github.com/tuanqpham0921"
+                                className="text-sm text-muted-foreground hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub
+                            </a>
+                            <a
+                                href="https://drive.google.com/file/d/1VDRLlSzlmA7H7o9OE82q8Iw0hlnmo-yA/view?usp=sharing"
+                                className="text-sm text-muted-foreground hover:underline"
+                                target="_blank"
+                            >
+                                Resume
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 {/* Text section */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-center text-center space-y-6 pb-12">
