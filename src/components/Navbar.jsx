@@ -42,7 +42,7 @@ export const Navbar = () => {
                 >
                     <span className="relative z-10">
                         {/* The {" "} inserts an explicit space */}
-                        <span className="text-glow text-foreground"> Tuan's </span> {" "}
+                        {/* <span className="text-glow text-foreground"> Tuan's </span> {" "} */}
                         Portfolio
                     </span>
                 </a>
