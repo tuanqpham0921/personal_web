@@ -1,38 +1,78 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
-{/* TODO: update these info */}
+// Updated skills list with numeric proficiency for progress bars
 const skills = [
-  // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+    // Languages
+    { name: "Python",       level: 90, label: "Proficient", category: "Languages" },
+    { name: "C",            level: 70, label: "Familiar",   category: "Languages" },
+    { name: "C++",          level: 70, label: "Familiar",   category: "Languages" },
+    { name: "Java",         level: 70, label: "Familiar",   category: "Languages" },
+    { name: "SQL",          level: 70, label: "Familiar",   category: "Languages" },
+    { name: "JavaScript",   level: 50, label: "Exposure",   category: "Languages" },
+    { name: "HTML",         level: 50, label: "Exposure",   category: "Languages" },
+    { name: "CSS",          level: 50, label: "Exposure",   category: "Languages" },
 
-  // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+    // DevOps / Automation
+    { name: "Git",         level: 90, label: "Proficient", category: "DevOps" },
+    { name: "Bash/Shell",  level: 70, label: "Familiar",   category: "DevOps" },
+    { name: "Makefiles",   level: 70, label: "Familiar",   category: "DevOps" },
+    { name: "Docker",      level: 70, label: "Familiar",   category: "DevOps" },
+    { name: "Bamboo",      level: 50, label: "Exposure",   category: "DevOps" },
+    { name: "Kubernetes",  level: 50, label: "Exposure",   category: "DevOps" },
 
-  // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+    // Project Management
+    { name: "Agile",        level: 70, label: "Familiar", category: "Project Management" },
+    { name: "Scrum",        level: 70, label: "Familiar", category: "Project Management" },
+    { name: "Confluence",   level: 70, label: "Familiar", category: "Project Management" },
+    { name: "Jira",         level: 70, label: "Familiar", category: "Project Management" },
+    { name: "BitBucket",    level: 70, label: "Familiar", category: "Project Management" },
+
+    // Web Development
+    { name: "ReactJS",      level: 50, label: "Exposure", category: "Web Development" },
+    { name: "Flask",        level: 50, label: "Exposure", category: "Web Development" },
+    { name: "Tailwind CSS", level: 50, label: "Exposure", category: "Web Development" },
+    { name: "Postman",      level: 50, label: "Exposure", category: "Web Development" },
+    { name: "Node.js",      level: 50, label: "Exposure", category: "Web Development" },
+    { name: "PostgreSQL",   level: 50, label: "Exposure", category: "Web Development" },
+
+    // AI / Data Science
+    { name: "Polars",       level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "NumPy",        level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "Pandas",       level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "TensorFlow",   level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "PyTorch",      level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "Scikit-learn", level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "Keras",        level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "HuggingFace",  level: 50, label: "Exposure", category: "AI / Data Science" },
+    { name: "Apache Spark", level: 50, label: "Exposure", category: "AI / Data Science" },
+    { name: "Hadoop",       level: 50, label: "Exposure", category: "AI / Data Science" },
+    
+    // Tools
+    { name: "VS Code",      level: 90, label: "Proficient", category: "Tools"},
+    { name: "Anaconda",     level: 90, label: "Proficient", category: "Tools"},
+    { name: "Jupyter",      level: 90, label: "Proficient", category: "Tools"},
+    { name: "Linux",        level: 70, label: "Familiar",   category: "Tools"},
+    { name: "GCP",          level: 70, label: "Familiar",   category: "Tools"},
+    { name: "AWS",          level: 50, label: "Exposure",   category: "Tools"},
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = [
+    "all",
+    "Languages",
+    "DevOps",
+    "Project Management",
+    "Web Development",
+    "AI / Data Science",
+    "Tools"
+];
 
 export const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState("all");
 
-    const filteredSkills = activeCategory === "all" 
-        ? skills : skills.filter(skill => skill.category === activeCategory
-    );
+    const filteredSkills = activeCategory === "all"
+        ? skills
+        : skills.filter(skill => skill.category === activeCategory);
 
     return (
         <section id="skills" className="py-24 px-4 relative bg-secondary/30">
@@ -56,33 +96,26 @@ export const SkillsSection = () => {
                     ))}
                 </div>
 
-                <div className="grid grid-cols1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredSkills.map((skill, key) => (
                         <div 
                             key={key} 
-                            className="bg-card p-6 rounded-lg shadow-xs card-hover"
-                        > 
-                            <div className="text-left mb-4">
-                                <h3 className="font-semibold text-lg"> {skill.name} </h3>
+                            className="bg-card p-6 rounded-lg shadow-xs card-hover relative group"
+                        >   
+                            <div className="text-left">
+                                <h3 className="font-semibold text-lg">{skill.name}</h3>
+                                <div className="flex justify-between items-center mb-1">
+                                    <span className="text-xs text-muted-foreground">{skill.category}</span>
+                                </div>
                             </div>
-                            
-                            <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                                <div className="bg-primary h-2 rounded-full origin-left animate-[grow_1,5s_ease-out]"
-                                    style={{ width: `${skill.level}%` }}
-                                />
-                            </div>
-
-                            <div className="text-right mt-1">
-                                <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                            </div>
+                            {/* Tooltip appears when hovering the whole card */}
+                            <span className="opacity-0 group-hover:opacity-100 transition-opacity absolute right-4 top-4 px-2 py-1 bg-card border rounded text-xs text-primary z-10 whitespace-nowrap">
+                                {skill.label}
+                            </span>
                         </div>
                     ))}
                 </div>
-
             </div>
-            
-            
         </section>
-    
     );
 }
