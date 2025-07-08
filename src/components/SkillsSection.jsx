@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { ArrowDown } from "lucide-react";
 
 // Updated skills list with numeric proficiency for progress bars
 const skills = [
@@ -14,7 +15,7 @@ const skills = [
     { name: "CSS",          level: 50, label: "Exposure",   category: "Languages" },
 
     // DevOps / Automation
-    { name: "Git",         level: 90, label: "Proficient", category: "DevOps" },
+    { name: "Git/GitHub",         level: 90, label: "Proficient", category: "DevOps" },
     { name: "Bash/Shell",  level: 70, label: "Familiar",   category: "DevOps" },
     { name: "Makefiles",   level: 70, label: "Familiar",   category: "DevOps" },
     { name: "Docker",      level: 70, label: "Familiar",   category: "DevOps" },
@@ -115,6 +116,10 @@ export const SkillsSection = () => {
                         </div>
                     ))}
                 </div>
+            </div>
+
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+                <ArrowDown className="h-5 w-5 text-primary" />
             </div>
         </section>
     );
