@@ -2,7 +2,8 @@ import {
   Mail,
   MapPin,
   Phone,
-  Linkedin
+  Linkedin,
+  GithubIcon
 } from "lucide-react";
 
 export const ContactSection = () => {
@@ -69,6 +70,10 @@ export const ContactSection = () => {
           <div className="flex justify-center space-x-4">
             <a href="https://www.linkedin.com/in/tuanqpham0921/" target="_blank" rel="noopener noreferrer">
               <Linkedin />
+            </a>
+
+            <a href="https://github.com/tuanqpham0921" target="_blank" rel="noopener noreferrer">
+              <GithubIcon />
             </a>
           </div>
         </div>
