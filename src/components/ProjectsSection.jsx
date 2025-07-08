@@ -1,33 +1,28 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, ArrowDown } from "lucide-react";
 
-{/* TODO change these out DemoURL and githubURL */}
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Pseudocode to C++ Translator",
+    description:
+      "Created a machine learning model that translates Pseudocode to C++. Utilized the Stanford’s SPoC dataset.",
+    tags: ["PyTorch", "Google Colab", "HuggingFace"],
+    demoUrl: "https://colab.research.google.com/drive/1TVuvG0gCWD-CgkhOzX7hBGMqHejtQFtv?usp=sharing#scrollTo=_GGr-XPlJEUq",
+    githubUrl: "https://colab.research.google.com/drive/1TVuvG0gCWD-CgkhOzX7hBGMqHejtQFtv?usp=sharing#scrollTo=_GGr-XPlJEUq",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
-    description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Personal Website",
+    description: "A personal website using React and TailwindCSS.",
+    tags: ["React", "TailwindCSS", "Vite"],
+    demoUrl: "https://github.com/tuanqpham0921/personal_web",
+    githubUrl: "https://github.com/tuanqpham0921/personal_web",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+    title: "Taxi Data Processor",
+    description: "Designed a distributed algorithm for processing a 30+ GB taxi dataset. Enhanced data pipeline efficiency by monitoring and fine-tuning job configurations",
+    tags: ["Hadoop MapReduce", "GCP",],
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -53,15 +48,14 @@ export const ProjectsSection = () => {
               key={key}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
 
               <div className="p-6">
+                <h3 className="text-xl font-semibold mb-1 text-left"> {project.title}</h3>
+
+                <p className="text-muted-foreground text-sm mb-4 text-left">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
@@ -70,11 +64,7 @@ export const ProjectsSection = () => {
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center left-6 bottom-6">
                   <div className="flex space-x-3">
                     <a
                       href={project.demoUrl}
@@ -106,7 +96,9 @@ export const ProjectsSection = () => {
             Check My Github <ArrowRight size={16} />
           </a>
         </div>
-        
+      </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+          <ArrowDown className="h-5 w-5 text-primary" />
       </div>
     </section>
   );
