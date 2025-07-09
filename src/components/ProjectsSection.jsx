@@ -14,7 +14,7 @@ const projects = [
     id: 2,
     title: "Personal Website",
     description: "A personal website using React and TailwindCSS.",
-    tags: ["React", "TailwindCSS", "Vite"],
+    tags: ["React", "TailwindCSS", "Vite", "FireBase", "GCP"],
     demoUrl: "https://github.com/tuanqpham0921/personal_web",
     githubUrl: "https://github.com/tuanqpham0921/personal_web",
   },
