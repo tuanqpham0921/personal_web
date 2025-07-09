@@ -59,21 +59,22 @@ const skills = [
 ];
 
 const categories = [
-    "all",
     "Languages",
     "DevOps",
     "Project Management",
     "Web Development",
     "AI / Data Science",
-    "Tools"
+    "Tools",
+    "All" // Add "All" as the last tab
 ];
 
 export const SkillsSection = () => {
-    const [activeCategory, setActiveCategory] = useState("all");
+    const [activeCategory, setActiveCategory] = useState(categories[0]); // Default to first category
 
-    const filteredSkills = activeCategory === "all"
-        ? skills
-        : skills.filter(skill => skill.category === activeCategory);
+    const filteredSkills =
+        activeCategory === "All"
+            ? skills
+            : skills.filter(skill => skill.category === activeCategory);
 
     return (
         <section id="skills" className="py-24 px-4 relative bg-secondary/30">
