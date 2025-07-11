@@ -69,10 +69,16 @@ export const HeroSection = () => {
                         </span>
                     </h1>
                     <p className="text-sm md:text-base text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3 text-left">
-                        Hello! I'm an ex-Software Engineer at United Launch Alliance (ULA). I created this website to help you get to know me better.<br /><br />
-                        I'm passionate about automation, software development, cloud computing and machine learning.<br /><br />
-                        I'm always learning and expanding my knowledge across different domains.<br /><br />
-                        Feel free to reach out if you have similar interests, backgrounds, or just want to connect!
+                        I created this website to help you get to know me better!<br /><br />
+
+                        I previously worked at United Launch Alliance (ULA), where I contributed across the software development lifecycle — 
+                        from coding to building CI/CD pipelines that automated testing and product release.<br /><br />
+
+                        I have a strong foundation in software engineering, with experience in Python, C++, automation, big data management, and cloud technologies.<br /><br />
+
+                        I’m passionate about building scalable, reliable systems and have refactored large codebases into maintainable, high-performance solutions. <br /><br />
+
+                        Feel free to reach out if you'd like to connect or discuss potential opportunities!
                     </p>
                 </div>
             </div>
