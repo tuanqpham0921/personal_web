@@ -49,7 +49,7 @@ export const HeroSection = () => {
                                 GitHub
                             </a>
                             <a
-                                href="https://drive.google.com/file/d/16693SVNRovXjJXAdW9UErge0y8BMt8Ln/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1MHKzgp-9FdsJNb86ketAg3ry5CjN0dxy/view?usp=sharing"
                                 className="text-sm text-muted-foreground hover:underline"
                                 target="_blank"
                             >
