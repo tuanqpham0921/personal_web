@@ -20,11 +20,11 @@ const projects = [
   },
   {
     id: 3,
-    title: "Taxi Data Processor",
-    description: "Designed a distributed algorithm for processing a 30+ GB taxi dataset. Enhanced data pipeline efficiency by monitoring and fine-tuning job configurations",
-    tags: ["Hadoop MapReduce", "GCP",],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Book Recommender",
+    description: ".................",
+    tags: [".....................",],
+    demoUrl: "/book-recommender",
+    githubUrl: "https://github.com/tuanqpham0921/Semantic-Book-Recommender",
   },
 ];
 

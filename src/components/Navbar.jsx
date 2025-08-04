@@ -1,21 +1,24 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 // '#' is an anchor link that refers to the ID of a section in the page
 // '/' is used for routing to different pages in a single-page application
 const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#hero", hash: "#hero" },
+    { name: "About", href: "/#about", hash: "#about" },
+    { name: "Skills", href: "/#skills", hash: "#skills" },
+    { name: "Projects", href: "/#projects", hash: "#projects" },
+    { name: "Contact", href: "/#contact", hash: "#contact" },
 ];
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,6 +30,24 @@ export const Navbar = () => {
             window.removeEventListener("scroll", handleScroll);
         }
     }, []);
+
+    // Helper to handle navigation and scrolling
+    const handleNavClick = (e, hash) => {
+        e.preventDefault();
+        if (location.pathname !== "/") {
+            navigate("/", { replace: false });
+            // Wait for navigation, then scroll
+            setTimeout(() => {
+                const el = document.querySelector(hash);
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        } else {
+            const el = document.querySelector(hash);
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+        }
+        setIsMenuOpen(false);
+    };
+
     return (
         <nav 
             className = {cn(
@@ -38,7 +59,8 @@ export const Navbar = () => {
             <div className="container flex items-center justify-between">
                 <a 
                     className="text-xl font-bold text-primary flex items-center"
-                    href="#hero"
+                    href="/#hero"
+                    onClick={e => handleNavClick(e, "#hero")}
                 >
                     <span className="relative z-10">
                         {/* The {" "} inserts an explicit space */}
@@ -50,8 +72,12 @@ export const Navbar = () => {
                 {/* desktop nav */}
                 <div className="hidden md:flex space-x-8">
                     {navItems.map((item, key) => (
-                        <a key={key} href={item.href} 
-                            className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                        <a
+                            key={key}
+                            href={item.href}
+                            onClick={e => handleNavClick(e, item.hash)}
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
                             {item.name}
                         </a>
                     ))}
@@ -71,16 +97,15 @@ export const Navbar = () => {
                     "transition-all duration-300 md:hidden",
                     isMenuOpen 
                         ? "opacity-100 pointer-events-auto" 
-                            : "opacity-0 pointer-events-none"
-                    )}
-                >
+                        : "opacity-0 pointer-events-none"
+                )}>
                     <div className="flex flex-col space-y-8 text-xl">
                         {navItems.map((item, key) => (
-                            <a 
+                            <a
                                 key={key}
-                                href={item.href} 
+                                href={item.href}
+                                onClick={e => handleNavClick(e, item.hash)}
                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                onClick={() => setIsMenuOpen(false)} // Close menu on click
                             >
                                 {item.name}
                             </a>
