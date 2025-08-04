@@ -1,6 +1,7 @@
 import { Navbar }         from "@/components/Navbar";
 import { ThemeToggle }    from "@/components/ThemeToggle";
 import { StarBackground } from "@/components/StarBackground";
+import BookRecSection from "../components/BookRecSection";
 
 
 
@@ -16,9 +17,9 @@ export const BookRecommender = () => {
     {/* Nav Bar */}
     <Navbar />
 
+    {/* Book Recommendation Section */}
+    <BookRecSection />
     
-    
-
   </div>
   );
 }
