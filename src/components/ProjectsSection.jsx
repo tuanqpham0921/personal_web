@@ -3,29 +3,33 @@ import { ArrowRight, ExternalLink, Github, ArrowDown } from "lucide-react";
 const projects = [
   {
     id: 1,
+    title: "Personal Website",
+    description: "Developed a portfolio website to showcase technical skills, \
+    project demos, and AI-powered applications. Integrated a responsive frontend \
+    with routes to live demos, GitHub repositories, and project write-ups, \
+    providing a professional platform for networking and job opportunities",
+    tags: ["React", "TailwindCSS", "Vite", "FireBase", "GCP"],
+    githubUrl: "https://github.com/tuanqpham0921/personal_web",
+  },
+  {
+    id: 2,
+    title: "Book Recommender",
+    description:
+      "Built a web application that recommends books based on user descriptions using semantic \
+      search with vector embeddings. Users can filter results by category, tone, and page \
+      number for a personalized reading experience.",
+    tags: ["LangChain (ChromaDB)","OpenAI", "HuggingFace", "FastAPI", "pydantic", "Cloud Run", "Docker"],
+    demoUrl: "/book-recommender",
+    githubUrl: "https://github.com/tuanqpham0921/Semantic-Book-Recommender",
+  },
+  {
+    id: 3,
     title: "Pseudocode to C++ Translator",
     description:
       "Created a machine learning model that translates Pseudocode to C++. Utilized the Stanford’s SPoC dataset.",
     tags: ["PyTorch", "Google Colab", "HuggingFace"],
-    demoUrl: "https://colab.research.google.com/drive/1TVuvG0gCWD-CgkhOzX7hBGMqHejtQFtv?usp=sharing#scrollTo=_GGr-XPlJEUq",
     githubUrl: "https://colab.research.google.com/drive/1TVuvG0gCWD-CgkhOzX7hBGMqHejtQFtv?usp=sharing#scrollTo=_GGr-XPlJEUq",
-  },
-  {
-    id: 2,
-    title: "Personal Website",
-    description: "A personal website using React and TailwindCSS.",
-    tags: ["React", "TailwindCSS", "Vite", "FireBase", "GCP"],
-    demoUrl: "https://github.com/tuanqpham0921/personal_web",
-    githubUrl: "https://github.com/tuanqpham0921/personal_web",
-  },
-  {
-    id: 3,
-    title: "Book Recommender",
-    description: ".................",
-    tags: [".....................",],
-    demoUrl: "/book-recommender",
-    githubUrl: "https://github.com/tuanqpham0921/Semantic-Book-Recommender",
-  },
+  }
 ];
 
 export const ProjectsSection = () => {
@@ -50,7 +54,7 @@ export const ProjectsSection = () => {
             >
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1 text-left"> {project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1 text-left text-primary underline"> {project.title}</h3>
 
                 <p className="text-muted-foreground text-sm mb-4 text-left">
                   {project.description}
@@ -66,22 +70,25 @@ export const ProjectsSection = () => {
 
                 <div className="flex justify-between items-center left-6 bottom-6">
                   <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        DEMO
+                      </a>
+                    )}
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
-                      <Github size={20} />
+                      GITHUB
                     </a>
                   </div>
                 </div>
+
               </div>
             </div>
           ))}
