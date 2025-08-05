@@ -20,8 +20,8 @@ const BookRecSection = () => {
     const payload = {
       description: query,
       filters: {
-        category: selectedCategory === "All" ? null : selectedCategory,
-        tone: selectedTone === "All" ? null : selectedTone,
+        category: selectedCategory === "All" ? "All" : selectedCategory,
+        tone: selectedTone === "All" ? "All" : selectedTone,
         max_pages: pageNumber ? parseInt(pageNumber) : null
       }
     };
