@@ -32,7 +32,7 @@ const BookRecSection = () => {
     setError("");
 
     try {
-      const response = await fetch('https://book-recommender-fastapi-978889476909.europe-west1.run.app/recommend_books', {
+      const response = await fetch('https://book-recommender-demo.tuanqpham0921.com/recommend_books', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
