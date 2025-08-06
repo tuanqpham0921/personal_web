@@ -21,6 +21,7 @@ const projects = [
     tags: ["LangChain (ChromaDB)","OpenAI", "HuggingFace", "FastAPI", "pydantic", "Cloud Run", "Docker"],
     demoUrl: "/book-recommender",
     githubUrl: "https://github.com/tuanqpham0921/Semantic-Book-Recommender",
+    blogUrl: "https://medium.com/@tuanqpham0921/book-recommender-project-347a85a9d4ea",
   },
   {
     id: 3,
@@ -86,6 +87,15 @@ export const ProjectsSection = () => {
                     >
                       GITHUB
                     </a>
+                    {project.blogUrl && (
+                      <a
+                        href={project.blogUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        BLOG
+                      </a>
+                    )}
                   </div>
                 </div>
 
