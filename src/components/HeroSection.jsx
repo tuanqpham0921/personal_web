@@ -76,7 +76,13 @@ export const HeroSection = () => {
 
                         I have a strong foundation in Software Engineering with experience in Python, C++, big data, CI/CD and cloud technologies.<br /><br />
 
-                        Feel free to reach out if you'd like to connect or discuss potential opportunities!
+                        Checkout my most recent project: 
+                        <a 
+                            href="/book-recommender" 
+                            className="text-primary hover:underline ml-1"
+                        >
+                            Book Recommender
+                        </a>
                     </p>
                 </div>
             </div>
