@@ -58,7 +58,7 @@ const SearchInput = ({
 
         {/* Page Number Input */}
         <div className="flex flex-col">
-          <label className="text-sm font-medium mb-1">Page Number:</label>
+          <label className="text-sm font-medium mb-1">Max Page Number:</label>
           <input
             type="number"
             placeholder="e.g., 300"

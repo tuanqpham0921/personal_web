@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import SearchInput from "./SearchInput";
 import RecommendationList from "./RecommendationList";
+import { ArrowDown, GithubIcon, BookText } from "lucide-react";
 
 const BookRecSection = () => {
   const [books, setBooks] = useState([]);
@@ -55,9 +56,17 @@ const BookRecSection = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-24 relative">
       <div className="absolute inset-0 bg-secondary/30 -z-10" />
-      <h1 className="text-2xl font-bold mb-4 text-center z-10">
-        Book Recommender DEMO
-      </h1>
+      <div className="flex items-center justify-center gap-3 mb-4 z-10">
+        <h1 className="text-2xl font-bold text-center">
+          Book Recommender
+        </h1>
+        <a href="https://github.com/tuanqpham0921/Semantic-Book-Recommender" target="_blank" rel="noopener noreferrer">
+          <GithubIcon />
+        </a>
+        <a href="https://medium.com/@tuanqpham0921/book-recommender-project-347a85a9d4ea" target="_blank" rel="noopener noreferrer">
+          <BookText />
+        </a>
+      </div>
 
       <SearchInput
         query={query}
@@ -76,6 +85,10 @@ const BookRecSection = () => {
       {error && <div className="text-red-500 mb-4 z-10">{error}</div>}
 
       <RecommendationList books={books} />
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <ArrowDown className="h-5 w-5 text-primary" />
+      </div>
     </div>
   );
 };
