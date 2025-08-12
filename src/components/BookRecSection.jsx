@@ -9,10 +9,6 @@ const BookRecSection = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedTone, setSelectedTone] = useState("All");
-  const [pageNumber, setPageNumber] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!query.trim()) return; // Prevent submit if description is empty
@@ -20,11 +16,6 @@ const BookRecSection = () => {
     // Build the payload for the API request
     const payload = {
       description: query,
-      filters: {
-        category: selectedCategory === "All" ? "All" : selectedCategory,
-        tone: selectedTone === "All" ? "All" : selectedTone,
-        max_pages: pageNumber ? parseInt(pageNumber) : null
-      }
     };
 
     console.log("Sending payload:", payload);
@@ -33,7 +24,7 @@ const BookRecSection = () => {
     setError("");
 
     try {
-      const response = await fetch('https://book-recommender-demo.tuanqpham0921.com/recommend_books', {
+      const response = await fetch('http://127.0.0.1:8000/recommend_books', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -71,15 +62,8 @@ const BookRecSection = () => {
       <SearchInput
         query={query}
         setQuery={setQuery}
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        selectedTone={selectedTone}
-        setSelectedTone={setSelectedTone}
-        pageNumber={pageNumber}
-        setPageNumber={setPageNumber}
         handleSubmit={handleSubmit}
         loading={loading}
-        disabled={!query.trim()} // Pass disabled prop to SearchInput
       />
 
       {error && <div className="text-red-500 mb-4 z-10">{error}</div>}
