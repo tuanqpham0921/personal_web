@@ -94,7 +94,7 @@ const BookRecSection = () => {
       <div className="absolute inset-0 bg-secondary/30 -z-10" />
       <div className="flex items-center justify-start gap-3 mb-2 z-10 w-full max-w-2xl">
         <h1 className="text-2xl font-bold text-left">
-          Book Recommender (v2.0.0)
+          Book Recommender
         </h1>
         <a href="https://github.com/tuanqpham0921/Semantic-Book-Recommender" target="_blank" rel="noopener noreferrer">
           <GithubIcon />
