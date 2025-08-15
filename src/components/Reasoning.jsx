@@ -15,28 +15,51 @@ const Reasoning = ({ reason, loading }) => {
       ) : hasReason ? (
         <div className="text-sm text-foreground text-left">
           {reason.content && (
-            <p className="mb-2 text-left"><strong>Core Content:</strong> {reason.content}</p>
+            <p className="mb-2 text-left"><strong>core content:</strong> {reason.content}</p>
           )}
           {reason.filters && (
             <div className="space-y-1">
               {Object.entries(reason.filters).map(([key, value]) => {
-                if (value !== null && value !== undefined && value !== '' && value !== 'null') {
-                  let displayKey = key === 'names' ? 'Key Words' : key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
-                  let displayValue;
-                  
-                  // Special handling for children field
-                  if (key === 'children' && value === true) {
-                    displayValue = 'True';
-                    displayKey = 'Children\'s Book';
-                  }
-
-                  return (
-                    <p key={key} className="text-left">
-                      <strong>{displayKey}:</strong> {displayValue}
-                    </p>
-                  );
+                // Return null if value is null, undefined, empty string, or 'null'
+                if (value === null || value === undefined || value === '' || value === 'null') {
+                  return null;
                 }
-                return null;
+
+                let displayKey = key;
+                let displayValue = value;
+
+                if (key === "pages_min"){
+                    displayKey = "min pages";
+                }
+                if (key === "pages_max"){
+                    displayKey = "max pages";
+                }
+
+                // Special handling for authors field
+                if (key == 'author' && Array.isArray(value) && value.length > 1) {
+                    displayKey = "authors" // with the s
+                    displayValue = value.join(', ');
+                }
+
+                // Special handling for names field
+                if (key == 'names') {
+                    displayKey = "key words"
+                    if (Array.isArray(value) && value.length > 1) {
+                      displayValue = value.join(', ');
+                    }
+                }
+
+                // Special handling for children field
+                if (key === 'children' && value === true) {
+                    displayKey = 'children\'s book';
+                    displayValue = 'true';
+                }
+
+                return (
+                  <p key={key} className="text-left">
+                    <strong>{displayKey}:</strong> {displayValue}
+                  </p>
+                );
               })}
             </div>
           )}
