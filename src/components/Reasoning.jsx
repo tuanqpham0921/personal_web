@@ -66,7 +66,7 @@ const Reasoning = ({ reason, loading }) => {
         </div>
       ) : (
         <div className="text-sm text-muted-foreground text-left">
-          <p>No filters applied yet. Submit a query to see smart filters in action!</p>
+          <p>Submit a query to see smart filters in action!</p>
         </div>
       )}
       

@@ -127,7 +127,7 @@ const BookRecSection = () => {
               <ul className="list-disc list-inside space-y-1 ml-2">
                 <li>Input your book preferences with <em>Author, Genre, Key Words, Pages, Children</em> and <em>Tone</em> etc.</li>
                 <li>Limited to <em>Fiction</em> and <em>Non-Fiction</em> genres in this version</li>
-                <li>Please ensure correct spelling of author names for best results (no spell check YET)</li>
+                <li>Please ensure correct spelling of author/keywords names for best results (no spell check YET)</li>
               </ul>
             </div>
 
