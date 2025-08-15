@@ -21,7 +21,12 @@ const BookCard = ({ book }) => {
         {book.title}
       </h3>
       <p className="text-xs text-muted-foreground mb-1 text-left w-full">
-        <span className="font-semibold">{book.authors}</span>
+        <span className="font-semibold">{book.authors ? book.authors.split(';').join(', ') : ''}</span>
+      </p>
+      <p className="text-xs text-muted-foreground mb-2 text-left w-full">
+        {book.simple_categories && <span>{book.simple_categories}</span>}
+        {book.simple_categories && book.num_pages && <span> • </span>}
+        {book.num_pages && <span>{book.num_pages} pages</span>}
       </p>
       <p className="text-xs text-foreground bg-secondary/40 rounded p-2 w-full transition text-left">
         {displayDesc}
