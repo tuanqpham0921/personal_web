@@ -21,8 +21,15 @@ const Reasoning = ({ reason, loading }) => {
             <div className="space-y-1">
               {Object.entries(reason.filters).map(([key, value]) => {
                 if (value !== null && value !== undefined && value !== '' && value !== 'null') {
-                  const displayKey = key === 'names' ? 'Key Words' : key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
-                  const displayValue = Array.isArray(value) ? value.join(', ') : value;
+                  let displayKey = key === 'names' ? 'Key Words' : key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ');
+                  let displayValue;
+                  
+                  // Special handling for children field
+                  if (key === 'children' && value === true) {
+                    displayValue = 'True';
+                    displayKey = 'Children\'s Book';
+                  }
+
                   return (
                     <p key={key} className="text-left">
                       <strong>{displayKey}:</strong> {displayValue}
