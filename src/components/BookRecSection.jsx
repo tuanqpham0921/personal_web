@@ -14,7 +14,7 @@ const BookRecSection = () => {
   const [showSamples, setShowSamples] = useState(false);
 
   // let URL = "http://127.0.0.1:8000";
-  // let URL = "https://tuanqpham0921.com/book-recommender";
+  // let URL = "https://book-recommender-demo.tuanqpham0921.com/recommend_books";
   let URL = "https://semantic-book-recommender-dev-978889476909.europe-west1.run.app";
 
   const reasonQuery = async (payload) => {
