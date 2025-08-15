@@ -16,8 +16,10 @@ const BookRecSection = () => {
   // let URL = "http://127.0.0.1:8000";
   // let URL = "https://book-recommender-demo.tuanqpham0921.com/recommend_books";
 
-  let URL_v1 = "https://bookrec-v1-978889476909.us-central1.run.app";
+  // let URL_v1 = "https://bookrec-v1-978889476909.us-central1.run.app";
   let URL_v2 = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
+
+  let URL = URL_v2; // Use v2 for the latest version
 
   const reasonQuery = async (payload) => {
     try {
