@@ -67,6 +67,8 @@ const BookRecSection = () => {
 
     setLoading(true);
     setError("");
+    setReason({}); // Clear previous results
+    setBooks([]); // Clear previous book results
 
     try {
       const reasonResult = await reasonQuery(payload);
@@ -84,7 +86,7 @@ const BookRecSection = () => {
       <div className="absolute inset-0 bg-secondary/30 -z-10" />
       <div className="flex items-center justify-start gap-3 mb-2 z-10 w-full max-w-2xl">
         <h1 className="text-2xl font-bold text-left">
-          Book Recommender (V2.0.0)
+          Book Recommender
         </h1>
         <a href="https://github.com/tuanqpham0921/Semantic-Book-Recommender" target="_blank" rel="noopener noreferrer">
           <GithubIcon />
@@ -116,7 +118,8 @@ const BookRecSection = () => {
         {showDescription && (
           <div className="text-left mt-3 p-4 bg-card rounded-lg border animate-in slide-in-from-top-2 duration-200">
             <p className="text-sm text-foreground mb-3">
-              This AI-powered book recommendation system uses semantic search and natural language processing to understand your preferences and suggest books you'll love.
+              This AI-powered book recommendation system uses semantic search and natural language 
+              processing to understand your preferences and suggest books you'll love.
             </p>
 
             <div className="space-y-2 text-xs text-muted-foreground mb-3">
@@ -152,7 +155,7 @@ const BookRecSection = () => {
               </ul>
 
               <p className="text-sm text-foreground mb-3">
-                (Experiment with different wordings to see how the results change)
+                (Experiment with different wording to see how the results change)
               </p>
             </div>
           </div>
@@ -168,7 +171,7 @@ const BookRecSection = () => {
 
       {error && <div className="text-red-500 mb-4 z-10">{error}</div>}
       
-      <Reasoning reason={reason} />
+      <Reasoning reason={reason} loading={loading} />
       <RecommendationList books={books} />
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
