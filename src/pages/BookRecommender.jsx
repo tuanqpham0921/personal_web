@@ -1,9 +1,9 @@
-import { Navbar }         from "@/components/Navbar";
-import { ThemeToggle }    from "@/components/ThemeToggle";
-import { StarBackground } from "@/components/StarBackground";
-import BookRecSection from "../components/BookRecSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { ContactSection } from "@/components/ContactSection";
+import { Navbar }         from "@/components/shared/Navbar";
+import { ThemeToggle }    from "@/components/shared/ThemeToggle";
+import { StarBackground } from "@/components/shared/StarBackground";
+import BookRecSection from "../components/book_recommender/v2/BookRecSection";
+import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { ContactSection } from "@/components/portfolio/ContactSection";
 
 export const BookRecommender = () => {
   return (

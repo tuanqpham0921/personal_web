@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SearchInput from "./SearchInput";
-import RecommendationList from "./RecommendationList";
+import RecommendationList from "../shared/RecommendationList";
 import Reasoning from "./Reasoning";
 import { ArrowDown, GithubIcon, BookText, ChevronDown, ChevronUp } from "lucide-react";
 
