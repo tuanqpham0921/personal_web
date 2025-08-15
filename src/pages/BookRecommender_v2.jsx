@@ -5,7 +5,7 @@ import BookRecSection from "../components/book_recommender/v2/BookRecSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 
-export const BookRecommender = () => {
+export const BookRecommenderV2 = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     {/* Theme Toggle */}
