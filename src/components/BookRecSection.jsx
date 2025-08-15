@@ -13,9 +13,13 @@ const BookRecSection = () => {
   const [showDescription, setShowDescription] = useState(false);
   const [showSamples, setShowSamples] = useState(false);
 
+  // let URL = "http://127.0.0.1:8000";
+  // let URL = "https://tuanqpham0921.com/book-recommender";
+  let URL = "https://semantic-book-recommender-dev-978889476909.europe-west1.run.app";
+
   const reasonQuery = async (payload) => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/reason_query', {
+      const response = await fetch(`${URL}/reason_query`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -39,7 +43,7 @@ const BookRecSection = () => {
   const recommendBooks = async (payload, reason) => {
     console.log("Recommending Books");
     try {
-      const response = await fetch('http://127.0.0.1:8000/recommend_books', {
+      const response = await fetch(`${URL}/recommend_books`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({...payload, ...reason}),
