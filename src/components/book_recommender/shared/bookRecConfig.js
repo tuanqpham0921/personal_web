@@ -41,11 +41,14 @@ export const bookRecConfig = {
       "The smart filters limitations, what it's missing or got wrong"
     ],
     sampleInputs: [
+      "A book about Italy",
       "Books written by Stephen King",
       "300 page or more books by Stephen King with a sad tone and take place in Maine",
       "Science nonfiction book with at least 500 pages about climate change",
       "A non fiction book on World War II with a somber voice",
-      "A short story collection with dark humor for kids, under 180 pages"
+      "A lighthearted children’s book with fewer than 50 pages about animals",
+      "A dystopian novel with high surveillance and paranoia from the government",
+      "Find me a happy romance novel with at least 200 pages about second chances",
     ]
   }
 };
