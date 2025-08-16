@@ -3,7 +3,7 @@ import { ArrowLeft, ChevronDown } from "lucide-react";
 
 const versions = [
   { key: "v1", label: "Version 1", path: "/book-recommender-v1" },
-  { key: "v2", label: "Version 2", path: "/book-recommender-v2" },
+  { key: "v2", label: "Version 2", path: "/book-recommender" },
 ];
 
 export function VersionDropdown({ currentVersion }) {

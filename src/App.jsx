@@ -12,7 +12,6 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/book-recommender-v1" element={<BookRecommenderV1 />} />
-          <Route path="/book-recommender-v2" element={<BookRecommenderV2 />} />
           <Route path="/book-recommender" element={<BookRecommenderV2 />} /> {/* Default to latest */}
           <Route path="*" element={<NotFound />} />
         </Routes>
