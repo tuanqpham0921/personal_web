@@ -1,7 +1,9 @@
 import { useState } from "react";
 import SearchInput from "./SearchInput";
 import RecommendationList from "../shared/RecommendationList";
-import { ArrowDown, GithubIcon, BookText } from "lucide-react";
+import BookRecHeader from "../shared/BookRecHeader";
+import { getBookRecConfig } from "../shared/bookRecConfig";
+import { ArrowDown } from "lucide-react";
 
 const BookRecSection = () => {
   const [books, setBooks] = useState([]);
@@ -12,6 +14,9 @@ const BookRecSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedTone, setSelectedTone] = useState("All");
   const [pageNumber, setPageNumber] = useState("");
+
+  // Get configuration for V1
+  const config = getBookRecConfig('v1');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -58,17 +63,17 @@ const BookRecSection = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-24 relative">
       <div className="absolute inset-0 bg-secondary/30 -z-10" />
-      <div className="flex items-center justify-center gap-3 mb-4 z-10">
-        <h1 className="text-2xl font-bold text-center">
-          Book Recommender
-        </h1>
-        <a href="https://github.com/tuanqpham0921/Semantic-Book-Recommender" target="_blank" rel="noopener noreferrer">
-          <GithubIcon />
-        </a>
-        <a href="https://medium.com/@tuanqpham0921/book-recommender-project-347a85a9d4ea" target="_blank" rel="noopener noreferrer">
-          <BookText />
-        </a>
-      </div>
+      
+      <BookRecHeader 
+        version={config.version}
+        title={config.title}
+        description={config.description}
+        versionInfo={config.versionInfo}
+        attentionPoints={config.attentionPoints}
+        sampleInputs={config.sampleInputs}
+        githubUrl={config.githubUrl}
+        mediumUrl={config.mediumUrl}
+      />
 
       <SearchInput
         query={query}
