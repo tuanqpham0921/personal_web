@@ -60,7 +60,7 @@ const BookRecHeader = ({
               className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <BookText size={16} />
-              <span>Blog For v{version}</span>
+              <span>Version Blog</span>
             </a>
           )}
         </div>

@@ -16,14 +16,12 @@ export const bookRecConfig = {
     attentionPoints: [
       "How different category filters affect the results",
       "The impact of tone selection on book recommendations",
-      "Page number filtering capabilities and limitations"
+      "Key words like Italy does not appear in all descriptions"
     ],
     sampleInputs: [
-      "Fantasy books with a dark tone",
-      "Non-fiction books under 300 pages",
-      "Mystery novels with any tone",
-      "Self-help books",
-      "Science fiction with an optimistic tone"
+      "A book about space exploration",
+      "A book about the history of Italy",
+      "Find me a book about World War II",
     ]
   },
   v2: {
