@@ -4,6 +4,7 @@ import { StarBackground } from "@/components/shared/StarBackground";
 import BookRecSection from "../components/book_recommender/v2/BookRecSection";
 import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
+import VersionSwitcher from "../components/book_recommender/shared/VersionSwitcher";
 
 export const BookRecommenderV2 = () => {
   return (
@@ -15,7 +16,8 @@ export const BookRecommenderV2 = () => {
     <StarBackground /> 
 
     {/* Nav Bar */}
-    <Navbar />
+
+    <VersionSwitcher currentVersion="v2" />
 
     <main>
       {/* Book Recommendation Section */}
