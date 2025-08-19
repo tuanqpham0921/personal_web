@@ -100,6 +100,7 @@ const BookRecSection = () => {
         sampleInputs={config.sampleInputs}
         githubUrl={config.githubUrl}
         mediumUrl={config.mediumUrl}
+        status="latest" // or "obsolete"
       />
 
       <SearchInput

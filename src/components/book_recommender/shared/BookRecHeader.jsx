@@ -9,7 +9,8 @@ const BookRecHeader = ({
   attentionPoints, 
   sampleInputs,
   githubUrl,
-  mediumUrl
+  mediumUrl,
+  status // 'latest' | 'obsolete' | undefined
 }) => {
   const [showDescription, setShowDescription] = useState(false);
   const [showSamples, setShowSamples] = useState(false);
@@ -17,9 +18,17 @@ const BookRecHeader = ({
   return (
     <>
       <div className="flex items-center justify-between gap-3 mb-2 z-10 w-full max-w-2xl">
-        <h1 className="text-2xl font-bold text-left">
-          {title}
-        </h1>
+        <div className="flex items-center gap-2">
+          <h1 className="text-2xl font-bold text-left">
+            {title}
+          </h1>
+          {status === 'latest' && (
+            <span className="ml-2 px-2 py-1 rounded bg-green-100 text-green-700 text-xs font-semibold">Latest</span>
+          )}
+          {status === 'obsolete' && (
+            <span className="ml-2 px-2 py-1 rounded bg-red-100 text-red-700 text-xs font-semibold">Obsolete</span>
+          )}
+        </div>
       </div>
 
       <div className="w-full max-w-2xl mb-6 z-10">
