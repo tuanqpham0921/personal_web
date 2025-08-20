@@ -98,7 +98,7 @@ const Reasoning = ({ reason, loading }) => {
       )}
       
       <div className="text-xs text-muted-foreground text-right mt-6">
-        * Version 2.0.0
+        * Version 2.1.0
       </div>
       <div className="text-xs text-muted-foreground text-right mt-1">
         * AI-generated filters may not be 100% accurate

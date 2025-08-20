@@ -25,13 +25,13 @@ export const bookRecConfig = {
     ]
   },
   v2: {
-    version: "2.0.0", 
+    version: "2.1.0", 
     title: "Book Recommender",
     description: "This AI-powered book recommendation system uses semantic search and natural language processing to understand your preferences and suggest books you'll love.",
     githubUrl: "https://github.com/tuanqpham0921/Semantic-Book-Recommender",
     mediumUrl: "https://medium.com/@tuanqpham0921/book-recommender-v2-blog-d1f57fdc2fcf",
     versionInfo: [
-      "Input your book preferences with <em>Author, Genre, Key Words, Pages, Children</em> and <em>Tone</em> etc.",
+      "Input your book preferences with <em>Author, Genre, Key Words, Pages, Children, Published Year</em> and <em>Tone</em> etc.",
       "Limited to <em>Fiction</em> and <em>Non-Fiction</em> genres in this version",
       "Please ensure correct spelling of author/keywords names for best results (no spell check YET)"
     ],
