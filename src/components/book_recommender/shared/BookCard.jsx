@@ -25,7 +25,9 @@ const BookCard = ({ book }) => {
       </p>
       <p className="text-xs text-muted-foreground mb-2 text-left w-full">
         {book.simple_categories && <span>{book.simple_categories}</span>}
-        {book.simple_categories && book.num_pages && <span> • </span>}
+        {(book.simple_categories && (book.published_year || book.num_pages)) && <span> • </span>}
+        {book.published_year && <span>{book.published_year}</span>}
+        {book.published_year && book.num_pages && <span> • </span>}
         {book.num_pages && <span>{book.num_pages} pages</span>}
       </p>
       <p className="text-xs text-foreground bg-secondary/40 rounded p-2 w-full transition text-left">

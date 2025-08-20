@@ -55,6 +55,33 @@ const Reasoning = ({ reason, loading }) => {
                     displayValue = 'true';
                 }
 
+                // Special handling for published year field
+                if (key === 'published_year' && typeof value === 'object' && value !== null) {
+                    const yearElements = [];
+                    if (value.min !== null && value.min !== undefined) {
+                        yearElements.push(
+                            <p key={`${key}-min`} className="text-left">
+                                <strong>published year (min):</strong> {value.min}
+                            </p>
+                        );
+                    }
+                    if (value.max !== null && value.max !== undefined) {
+                        yearElements.push(
+                            <p key={`${key}-max`} className="text-left">
+                                <strong>published year (max):</strong> {value.max}
+                            </p>
+                        );
+                    }
+                    if (value.exact !== null && value.exact !== undefined) {
+                        yearElements.push(
+                            <p key={`${key}-exact`} className="text-left">
+                                <strong>published year (exact):</strong> {value.exact}
+                            </p>
+                        );
+                    }
+                    return yearElements;
+                }
+
                 return (
                   <p key={key} className="text-left">
                     <strong>{displayKey}:</strong> {displayValue}
