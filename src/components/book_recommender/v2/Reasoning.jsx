@@ -29,10 +29,10 @@ const Reasoning = ({ reason, loading }) => {
                 let displayValue = value;
 
                 if (key === "pages_min"){
-                    displayKey = "min pages";
+                    displayKey = "pages (min)";
                 }
                 if (key === "pages_max"){
-                    displayKey = "max pages";
+                    displayKey = "pages (max)";
                 }
 
                 // Special handling for authors field
