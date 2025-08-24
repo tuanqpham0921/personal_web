@@ -14,10 +14,10 @@ const BookRecSection = () => {
   const [reason, setReason] = useState({});
 
   // Get configuration for V2
-  const config = getBookRecConfig('v2');
+  const config = getBookRecConfig('v3');
 
-  // const URL = "http://127.0.0.1:8000";
-  const URL = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
+  const URL = "http://127.0.0.1:8000";
+  // const URL = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
 
   const reasonQuery = async (payload) => {
     try {
@@ -100,7 +100,7 @@ const BookRecSection = () => {
         sampleInputs={config.sampleInputs}
         githubUrl={config.githubUrl}
         mediumUrl={config.mediumUrl}
-        status="obsolete"
+        status="latest" // or "obsolete"
       />
 
       <SearchInput

@@ -50,6 +50,22 @@ export const bookRecConfig = {
       "A dystopian novel with high surveillance and paranoia from the government",
       "Find me a happy romance novel with at least 200 pages about second chances",
     ]
+  },
+  v3: {
+    version: "3.0.0", 
+    title: "Book Recommender ___V3_DEV____",
+    description: "..................",
+    githubUrl: "................",
+    mediumUrl: "................",
+    versionInfo: [
+      "............"
+    ],
+    attentionPoints: [
+      ".........."
+    ],
+    sampleInputs: [
+      "..........",
+    ]
   }
 };
 
