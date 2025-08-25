@@ -16,9 +16,9 @@ const BookRecSection = () => {
   // Get configuration for V3
   const config = getBookRecConfig('v3');
 
-  // const URL_LOCAL = "http://127.0.0.1:8000";
+  const URL_LOCAL = "http://127.0.0.1:8000";
   // const URL_V2 = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
-  const URL_V3_DEV = "https://semantic-book-recommender-dev-978889476909.us-central1.run.app";
+  // const URL_V3_DEV = "https://semantic-book-recommender-dev-978889476909.us-central1.run.app";
 
   const URL = URL_V3_DEV
 
