@@ -20,7 +20,7 @@ const BookRecSection = () => {
   // const URL_V2 = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
   // const URL_V3_DEV = "https://semantic-book-recommender-dev-978889476909.us-central1.run.app";
 
-  const URL = URL_V3_DEV
+  const URL = URL_LOCAL;
 
   const reasonQuery = async (payload) => {
     try {
