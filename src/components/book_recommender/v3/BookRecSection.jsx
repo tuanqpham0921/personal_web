@@ -13,7 +13,7 @@ const BookRecSection = () => {
   const [error, setError] = useState("");
   const [reason, setReason] = useState({});
 
-  // Get configuration for V2
+  // Get configuration for V3
   const config = getBookRecConfig('v3');
 
   const URL = "http://127.0.0.1:8000";
