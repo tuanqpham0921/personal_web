@@ -16,8 +16,8 @@ const BookRecSection = () => {
   // Get configuration for V2
   const config = getBookRecConfig('v2');
 
-  // const URL = "http://127.0.0.1:8000";
-  const URL = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
+  const URL = "http://127.0.0.1:8000";
+  // const URL = "https://semantic-book-recommender-978889476909.europe-west1.run.app";
 
   const reasonQuery = async (payload) => {
     try {

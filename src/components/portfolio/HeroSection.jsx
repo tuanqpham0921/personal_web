@@ -78,7 +78,7 @@ export const HeroSection = () => {
 
                         Checkout my most recent project: 
                         <a 
-                            href="/book-recommender" 
+                            href="https://book-recommender-tuanqpham0921.web.app/" 
                             className="text-primary hover:underline ml-1"
                         >
                             Book Recommender
