@@ -15,14 +15,14 @@ const projects = [
     id: 2,
     title: "Book Recommender",
     description:
-      "Built a web application that recommends books based on user descriptions using semantic \
-      search with vector embeddings. Users can filter results by category, tone, and page \
-      number for a personalized reading experience.",
-    tags: ["LangChain (ChromaDB)","OpenAI", "HuggingFace", "FastAPI", "pydantic", "Cloud Run", "Docker"],
-    demoUrl: "/book-recommender",
-    githubUrl: "https://github.com/tuanqpham0921/Semantic-Book-Recommender",
-    blogUrl: "https://medium.com/@tuanqpham0921/book-recommender-project-347a85a9d4ea",
-  },
+      "Built a scalable AI-powered book recommendation system serving 5,000+ books with \
+      conversational search capabilities. Features semantic search using vector embeddings, \
+      natural language chat interface powered by OpenAI, and advanced filtering by category, \
+      tone, and page count. Implemented with microservices architecture using orchestrator \
+      pattern and deployed on GCP with Docker.",
+    tags: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Redis", "OpenAI", "LangChain", "LangGraph","Docker", "GCP"],
+    demoUrl: "https://book-recommender-tuanqpham0921.web.app/",
+},
   {
     id: 3,
     title: "Pseudocode to C++ Translator",
@@ -80,13 +80,15 @@ export const ProjectsSection = () => {
                         DEMO
                       </a>
                     )}
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      GITHUB
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        GITHUB
+                      </a>
+                    )}
                     {project.blogUrl && (
                       <a
                         href={project.blogUrl}

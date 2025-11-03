@@ -15,7 +15,7 @@ const skills = [
     { name: "CSS",          level: 50, label: "Exposure",   category: "Languages" },
 
     // DevOps / Automation
-    { name: "Git/GitHub",         level: 90, label: "Proficient", category: "DevOps" },
+    { name: "Git/GitHub",  level: 90, label: "Proficient", category: "DevOps" },
     { name: "Bash/Shell",  level: 70, label: "Familiar",   category: "DevOps" },
     { name: "Makefiles",   level: 70, label: "Familiar",   category: "DevOps" },
     { name: "Docker",      level: 70, label: "Familiar",   category: "DevOps" },
@@ -31,13 +31,15 @@ const skills = [
     { name: "BitBucket",    level: 70, label: "Familiar", category: "Project Management" },
 
     // Web Development
-    { name: "ReactJS",      level: 50, label: "Exposure", category: "Web Development" },
+    { name: "ReactJS",      level: 50, label: "Familiar", category: "Web Development" },
     { name: "Tailwind CSS", level: 50, label: "Exposure", category: "Web Development" },
     { name: "Postman",      level: 50, label: "Exposure", category: "Web Development" },
     { name: "Node.js",      level: 50, label: "Exposure", category: "Web Development" },
-    { name: "PostgreSQL",   level: 50, label: "Exposure", category: "Web Development" },
+    { name: "PostgreSQL",   level: 50, label: "Familiar", category: "Web Development" },
     { name: "Flask",        level: 50, label: "Exposure", category: "Web Development" },
     { name: "FastAPI",      level: 70, label: "Familiar", category: "Web Development" },
+    { name: "SQLALchemy",   level: 70, label: "Familiar", category: "Web Development" },
+    { name: "Redis",        level: 70, label: "Familiar", category: "Web Development" },
 
 
     // AI / Data Science
@@ -48,13 +50,15 @@ const skills = [
     { name: "PyTorch",      level: 70, label: "Familiar", category: "AI / Data Science" },
     { name: "Scikit-learn", level: 70, label: "Familiar", category: "AI / Data Science" },
     { name: "Keras",        level: 70, label: "Familiar", category: "AI / Data Science" },
-    { name: "LangChain (ChromaDB)",    level: 70, label: "Familiar", category: "AI / Data Science" },
+    { name: "LangChain",    level: 70, label: "Familiar", category: "AI / Data Science" },
     { name: "OpenAI",       level: 70, label: "Familiar", category: "AI / Data Science" },
     { name: "HuggingFace",  level: 70, label: "Familiar", category: "AI / Data Science" },
     { name: "Pydantic",     level: 50, label: "Familiar", category: "AI / Data Science" },
     { name: "HuggingFace",  level: 50, label: "Familiar", category: "AI / Data Science" },
     { name: "Apache Spark", level: 50, label: "Exposure", category: "AI / Data Science" },
     { name: "Hadoop",       level: 50, label: "Exposure", category: "AI / Data Science" },
+    { name: "LangGraph",    level: 50, label: "Exposure", category: "AI / Data Science" },
+
 
     // Tools
     { name: "VS Code",      level: 90, label: "Proficient", category: "Tools"},
