@@ -118,6 +118,10 @@ const BookRecHeader = ({
             </div>
           </div>
         )}
+
+        <div className="flex items-center gap-4 mb-2">
+          (Note: Initial query may be slow as the server spins up from idle project)
+        </div>
       </div>
     </>
   );
